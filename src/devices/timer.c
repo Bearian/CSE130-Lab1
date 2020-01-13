@@ -102,10 +102,27 @@ timer_sleep (int64_t ticks)
   int64_t start = timer_ticks ();
 
   ASSERT (intr_get_level () == INTR_ON);
+/*
+  add wake uptime 
+*/
 
+/*
+  put it into a sleep queue
+*/
+
+
+/*
+  put thread to sleep   
+*/   
+  intr_disable();
   thread_block();
-/*  while (timer_elapsed (start) < ticks) 
-    thread_yield ();
+  intr_enable();
+
+
+/* 
+Original code
+  while (timer_elapsed (start) < ticks) 
+  thread_yield ();
 */
 }
 
