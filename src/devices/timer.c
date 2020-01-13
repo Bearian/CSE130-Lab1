@@ -100,12 +100,16 @@ void
 timer_sleep (int64_t ticks) 
 {
   int64_t start = timer_ticks ();
+  struct thread *t = thread_current();
+
 
   ASSERT (intr_get_level () == INTR_ON);
 /*
   add wake uptime 
 */
-
+  
+  int64_t wakeUp = start + ticks;
+  t->wakeUp = wakeUp;  
 /*
   put it into a sleep queue
 */

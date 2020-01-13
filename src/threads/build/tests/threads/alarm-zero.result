@@ -1,4 +1,2 @@
 FAIL
-Kernel panic in run: PANIC at ../../threads/thread.c:263 in thread_block(): assertion `intr_get_level() == INTR_OFF' failed.
-Call stack: 0xc00274a5
-Translation of call stack:
+run: TIMEOUT after 21 seconds of wall-clock time - load average: 0.07, 0.08, 0.02
