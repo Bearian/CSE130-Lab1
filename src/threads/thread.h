@@ -87,6 +87,11 @@ struct thread {
     char name[16]; /* Name (for debugging purposes). */
     uint8_t *stack; /* Saved stack pointer. */
     int priority; /* Priority. */
+
+/*lab1 added wake up time*/
+    int64_t wakeUp;
+/*lab1 added wake up time*/
+
     struct list_elem allelem; /* List element for all threads list. */
 
     /* Shared between thread.c and sempahore.c. */
